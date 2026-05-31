@@ -6,35 +6,36 @@
 <title>王丽新 — 个人简历</title>
 <style>
   :root {
-    --blue-50: #f0f7ff;
-    --blue-100: #dceeff;
-    --blue-200: #b8d8f8;
-    --blue-300: #8abfe8;
-    --blue-400: #5aa3d4;
-    --blue-500: #3b8bc0;
-    --blue-600: #2a6fa0;
-    --blue-700: #1d5885;
-    --blue-800: #144266;
-    --blue-900: #0d2f4a;
-    --text-primary: #1a2e3f;
-    --text-secondary: #3d5568;
-    --text-muted: #6b8296;
+    --blue-50: #f0f8ff;
+    --blue-100: #d6ecff;
+    --blue-200: #b0dbf8;
+    --blue-300: #7fc6f0;
+    --blue-400: #48a9e6;
+    --blue-500: #2991d8;
+    --blue-600: #1f7bc2;
+    --blue-700: #15629e;
+    --blue-800: #0e4b7d;
+    --blue-900: #083358;
+    --text-primary: #0f2a42;
+    --text-secondary: #2c4b66;
+    --text-muted: #5a7b99;
     --white: #ffffff;
-    --card-bg: rgba(255,255,255,0.82);
-    --card-border: rgba(180,210,235,0.5);
-    --shadow-sm: 0 1px 3px rgba(20,66,102,0.06);
-    --shadow-md: 0 4px 16px rgba(20,66,102,0.08);
-    --shadow-lg: 0 12px 40px rgba(20,66,102,0.10);
-    --radius-sm: 10px;
-    --radius-md: 16px;
-    --radius-lg: 20px;
+    --glass-bg: rgba(255,255,255,0.12);
+    --glass-border: rgba(150,200,245,0.25);
+    --glass-glow: rgba(72,169,230,0.18);
+    --shadow-sm: 0 1px 4px rgba(25,95,155,0.07);
+    --shadow-md: 0 5px 20px rgba(25,95,155,0.12);
+    --shadow-lg: 0 15px 50px rgba(25,95,155,0.18);
+    --radius-sm: 12px;
+    --radius-md: 18px;
+    --radius-lg: 24px;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   body {
     font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
-    background: #e8f2fb;
+    background: linear-gradient(160deg,#e6f4ff,#d1eaff,#eaf6ff);
     color: var(--text-primary);
     line-height: 1.7;
     min-height: 100vh;
@@ -42,7 +43,6 @@
     overflow-x: hidden;
   }
 
-  /* Aurora canvas */
   #aurora-canvas {
     position: fixed;
     top: 0; left: 0;
@@ -51,7 +51,6 @@
     pointer-events: none;
   }
 
-  /* Floating particles */
   .particles {
     position: fixed;
     top: 0; left: 0;
@@ -62,84 +61,65 @@
   .particle {
     position: absolute;
     border-radius: 50%;
-    background: rgba(160,200,235,0.35);
+    background: radial-gradient(circle, rgba(120,200,255,0.55),rgba(80,170,245,0));
+    box-shadow: 0 0 8px rgba(90,180,255,0.4);
     animation: floatUp linear infinite;
   }
   @keyframes floatUp {
-    0%   { transform: translateY(0) translateX(0) scale(1); opacity: 0; }
-    10%  { opacity: 0.6; }
-    90%  { opacity: 0.6; }
-    100% { transform: translateY(-105vh) translateX(60px) scale(0.3); opacity: 0; }
+    0%   { transform: translateY(0) translateX(0) scale(0.6); opacity: 0; }
+    12%  { opacity: 0.75; }
+    88%  { opacity: 0.7; }
+    100% { transform: translateY(-110vh) translateX(80px) scale(0.2); opacity: 0; }
   }
 
-  /* Main container */
   .main {
     position: relative;
     z-index: 1;
     max-width: 860px;
     margin: 0 auto;
-    padding: 32px 24px 60px;
+    padding: 20px 24px 70px;
   }
 
-  /* === HERO / HEADER === */
-  .hero {
-    text-align: center;
-    padding: 48px 20px 36px;
-    position: relative;
-  }
-  .hero .name {
-    font-size: 42px;
-    font-weight: 700;
-    letter-spacing: 4px;
-    background: linear-gradient(135deg, var(--blue-700), var(--blue-500), var(--blue-400));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 6px;
-  }
-  .hero .subtitle {
-    font-size: 15px;
-    color: var(--text-muted);
-    letter-spacing: 3px;
-    font-weight: 400;
-  }
-  .hero .divider {
-    width: 50px; height: 3px;
-    background: linear-gradient(90deg, var(--blue-300), var(--blue-500));
-    border-radius: 2px;
-    margin: 18px auto 0;
-  }
-
-  /* === NAV CARDS === */
   .nav-cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
-    margin-bottom: 40px;
+    gap: 16px;
+    margin-bottom: 42px;
   }
   .nav-card {
-    background: var(--card-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--card-border);
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
     border-radius: var(--radius-md);
-    padding: 20px 16px;
+    padding: 22px 16px;
     text-align: center;
     cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+    transition: all 0.35s ease;
     text-decoration: none;
     color: var(--text-primary);
     box-shadow: var(--shadow-sm);
+    position: relative;
+    overflow: hidden;
   }
+  .nav-card::after{
+    content:"";
+    position:absolute;
+    top:0;left:-100%;
+    width:100%;height:100%;
+    background:linear-gradient(90deg,transparent,rgba(130,200,255,0.18),transparent);
+    transition:left 0.5s;
+  }
+  .nav-card:hover::after{left:100%;}
   .nav-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-6px);
     box-shadow: var(--shadow-lg);
-    border-color: var(--blue-300);
-    background: rgba(255,255,255,0.92);
+    border-color: rgba(90,190,255,0.5);
+    background: rgba(255,255,255,0.18);
   }
   .nav-card .nav-icon {
-    font-size: 28px;
-    margin-bottom: 8px;
+    font-size: 30px;
+    margin-bottom: 9px;
     display: block;
   }
   .nav-card .nav-label {
@@ -151,257 +131,297 @@
   .nav-card .nav-hint {
     font-size: 11px;
     color: var(--text-muted);
-    margin-top: 4px;
+    margin-top: 5px;
   }
 
-  @media (max-width: 640px) {
-    .nav-cards { grid-template-columns: repeat(2, 1fr); }
-    .hero .name { font-size: 32px; }
+  .hero {
+    text-align: center;
+    padding: 30px 20px 40px;
+    position: relative;
+  }
+  .avatar {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(150,210,255,0.35);
+    box-shadow: 0 0 0 3px rgba(72,169,230,0.15),0 8px 30px var(--glass-glow);
+    background: #fff;
+    margin: 0 auto 22px;
+    display: block;
+    transition: all 0.4s cubic-bezier(0.2,0.8,0.2,1);
+  }
+  .avatar:hover {
+    transform: translateY(-6px) scale(1.04);
+    box-shadow: 0 0 0 3px rgba(72,169,230,0.35),0 14px 45px var(--glass-glow);
+    border-color: rgba(90,190,255,0.6);
+  }
+  .hero .name {
+    font-size: 44px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    background: linear-gradient(135deg,var(--blue-800),var(--blue-500),var(--blue-300));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 8px;
+  }
+  .hero .subtitle {
+    font-size: 15px;
+    color: var(--text-muted);
+    letter-spacing: 3px;
+    font-weight: 400;
+  }
+  .hero .divider {
+    width: 60px; height: 3px;
+    background: linear-gradient(90deg,var(--blue-300),var(--blue-500),var(--blue-400));
+    border-radius: 3px;
+    margin: 20px auto 0;
+    box-shadow: 0 0 6px rgba(72,169,230,0.3);
   }
 
-  /* === SECTIONS === */
   section {
-    margin-bottom: 32px;
+    margin-bottom: 36px;
   }
   .section-card {
-    background: var(--card-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--card-border);
+    background: var(--glass-bg);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid var(--glass-border);
     border-radius: var(--radius-lg);
-    padding: 32px 36px;
+    padding: 34px 38px;
     box-shadow: var(--shadow-md);
-    transition: box-shadow 0.3s;
+    transition: all 0.35s ease;
   }
   .section-card:hover {
     box-shadow: var(--shadow-lg);
+    border-color: rgba(90,190,255,0.38);
   }
   .section-title {
-    font-size: 20px;
+    font-size: 21px;
     font-weight: 700;
     color: var(--blue-700);
-    margin-bottom: 20px;
-    padding-bottom: 12px;
-    border-bottom: 2px solid var(--blue-100);
+    margin-bottom: 22px;
+    padding-bottom: 13px;
+    border-bottom: 2px solid rgba(175,215,250,0.35);
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 11px;
     letter-spacing: 1px;
   }
   .section-title .title-dot {
-    width: 8px; height: 8px;
-    background: var(--blue-500);
-    border-radius: 50%;
-    flex-shrink: 0;
+    width:9px;height:9px;
+    background: linear-gradient(135deg,var(--blue-400),var(--blue-600));
+    border-radius:50%;
+    box-shadow:0 0 6px var(--blue-400);
+    flex-shrink:0;
   }
 
-  /* === BASIC INFO === */
   .info-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 14px 24px;
+    grid-template-columns: repeat(3,1fr);
+    gap:15px 26px;
   }
   .info-item {
-    display: flex;
-    align-items: baseline;
-    gap: 8px;
-    font-size: 14px;
+    display:flex;
+    align-items:baseline;
+    gap:9px;
+    font-size:14px;
   }
   .info-item .label {
-    color: var(--text-muted);
-    white-space: nowrap;
-    font-weight: 500;
+    color:var(--text-muted);
+    white-space:nowrap;
+    font-weight:500;
   }
   .info-item .value {
-    color: var(--text-primary);
-    font-weight: 500;
+    color:var(--text-primary);
+    font-weight:500;
   }
 
-  /* === TIMELINE === */
-  .timeline { position: relative; padding-left: 24px; }
+  .timeline { position: relative; padding-left: 26px; }
   .timeline::before {
     content: '';
     position: absolute;
-    left: 6px; top: 6px; bottom: 6px;
-    width: 2px;
-    background: linear-gradient(180deg, var(--blue-300), var(--blue-100), transparent);
-    border-radius: 1px;
+    left:7px; top:8px; bottom:8px;
+    width:2px;
+    background: linear-gradient(180deg,var(--blue-400),var(--blue-200),transparent);
+    border-radius:2px;
   }
   .timeline-item {
-    position: relative;
-    margin-bottom: 24px;
-    padding-left: 24px;
+    position:relative;
+    margin-bottom:26px;
+    padding-left:26px;
   }
   .timeline-item::before {
-    content: '';
-    position: absolute;
-    left: -22px; top: 7px;
-    width: 10px; height: 10px;
-    background: var(--blue-400);
-    border-radius: 50%;
-    border: 2px solid var(--white);
-    box-shadow: 0 0 0 3px rgba(90,163,212,0.2);
+    content:"";
+    position:absolute;
+    left:-23px;top:8px;
+    width:11px;height:11px;
+    background:linear-gradient(135deg,var(--blue-400),var(--blue-600));
+    border-radius:50%;
+    border:2px solid rgba(255,255,255,0.6);
+    box-shadow:0 0 0 4px rgba(72,169,230,0.18);
   }
-  .timeline-item:last-child { margin-bottom: 0; }
+  .timeline-item:last-child { margin-bottom:0; }
   .timeline-date {
-    font-size: 13px;
-    color: var(--blue-500);
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    margin-bottom: 2px;
+    font-size:13px;
+    color:var(--blue-500);
+    font-weight:600;
+    letter-spacing:0.5px;
+    margin-bottom:3px;
   }
   .timeline-title {
-    font-size: 15px;
-    font-weight: 700;
-    color: var(--text-primary);
-    margin-bottom: 2px;
+    font-size:15px;
+    font-weight:700;
+    color:var(--text-primary);
+    margin-bottom:3px;
   }
   .timeline-sub {
-    font-size: 13px;
-    color: var(--text-secondary);
-    margin-bottom: 6px;
+    font-size:13px;
+    color:var(--text-secondary);
+    margin-bottom:7px;
   }
   .timeline-detail {
-    font-size: 13px;
-    color: var(--text-secondary);
-    line-height: 1.8;
+    font-size:13px;
+    color:var(--text-secondary);
+    line-height:1.85;
   }
   .timeline-detail ul {
-    list-style: none;
-    padding-left: 0;
+    list-style:none;
+    padding-left:0;
   }
   .timeline-detail ul li {
-    position: relative;
-    padding-left: 16px;
-    margin-bottom: 4px;
+    position:relative;
+    padding-left:18px;
+    margin-bottom:5px;
   }
   .timeline-detail ul li::before {
-    content: '—';
-    position: absolute;
-    left: 0;
-    color: var(--blue-300);
-    font-size: 11px;
+    content:"—";
+    position:absolute;
+    left:0;
+    color:var(--blue-400);
+    font-size:12px;
   }
 
-  /* === SKILL TAGS === */
-  .skill-group { margin-bottom: 18px; }
-  .skill-group:last-child { margin-bottom: 0; }
+  .skill-group { margin-bottom:20px; }
+  .skill-group:last-child { margin-bottom:0; }
   .skill-group-title {
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--blue-600);
-    margin-bottom: 8px;
-    letter-spacing: 0.5px;
+    font-size:13px;
+    font-weight:700;
+    color:var(--blue-600);
+    margin-bottom:9px;
+    letter-spacing:0.5px;
   }
   .skill-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:9px;
   }
   .skill-tag {
-    display: inline-block;
-    padding: 5px 14px;
-    font-size: 12px;
-    background: linear-gradient(135deg, var(--blue-50), #e5f0fa);
-    border: 1px solid var(--blue-100);
-    border-radius: 20px;
-    color: var(--blue-700);
-    font-weight: 500;
-    transition: all 0.2s;
+    display:inline-block;
+    padding:6px 15px;
+    font-size:12px;
+    background: rgba(255,255,255,0.15);
+    border:1px solid rgba(130,200,255,0.3);
+    border-radius:22px;
+    color:var(--blue-700);
+    font-weight:500;
+    transition:all 0.28s ease;
   }
   .skill-tag:hover {
-    background: var(--blue-100);
-    border-color: var(--blue-300);
+    background:rgba(72,169,230,0.18);
+    border-color:var(--blue-400);
+    transform:translateY(-2px);
   }
 
-  /* === COMPETITION CARDS === */
   .comp-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-    padding: 12px 16px;
-    border-radius: var(--radius-sm);
-    background: var(--blue-50);
-    margin-bottom: 10px;
-    transition: background 0.2s;
+    display:flex;
+    align-items:flex-start;
+    gap:15px;
+    padding:13px 18px;
+    border-radius:var(--radius-sm);
+    background:rgba(72,169,230,0.08);
+    margin-bottom:11px;
+    transition:background 0.3s ease;
   }
-  .comp-item:last-child { margin-bottom: 0; }
-  .comp-item:hover { background: #e2f0fc; }
+  .comp-item:last-child { margin-bottom:0; }
+  .comp-item:hover { background:rgba(72,169,230,0.15); }
   .comp-year {
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--white);
-    background: var(--blue-500);
-    padding: 2px 10px;
-    border-radius: 12px;
-    white-space: nowrap;
-    flex-shrink: 0;
-    margin-top: 1px;
+    font-size:12px;
+    font-weight:700;
+    color:#fff;
+    background:linear-gradient(135deg,var(--blue-500),var(--blue-600));
+    padding:2px 11px;
+    border-radius:14px;
+    white-space:nowrap;
+    flex-shrink:0;
+    margin-top:2px;
+    box-shadow:0 2px 6px rgba(41,145,216,0.3);
   }
-  .comp-body { font-size: 13px; color: var(--text-secondary); }
-  .comp-body strong { color: var(--text-primary); }
+  .comp-body { font-size:13px; color:var(--text-secondary); }
+  .comp-body strong { color:var(--text-primary); }
 
-  /* === SELF-EVAL === */
   .self-eval {
-    font-size: 14px;
-    color: var(--text-secondary);
-    line-height: 1.9;
-    padding: 16px 20px;
-    background: linear-gradient(135deg, var(--blue-50), #f5faff);
-    border-radius: var(--radius-sm);
-    border-left: 3px solid var(--blue-300);
+    font-size:14px;
+    color:var(--text-secondary);
+    line-height:1.95;
+    padding:18px 22px;
+    background:linear-gradient(135deg,rgba(72,169,230,0.07),rgba(150,210,255,0.1));
+    border-radius:var(--radius-sm);
+    border-left:3px solid var(--blue-400);
   }
 
-  /* === FOOTER === */
   .footer {
-    text-align: center;
-    padding: 20px;
-    font-size: 12px;
-    color: var(--text-muted);
-    letter-spacing: 1px;
+    text-align:center;
+    padding:22px;
+    font-size:12px;
+    color:var(--text-muted);
+    letter-spacing:1px;
   }
 
-  /* === SCROLL TO TOP === */
   .scroll-top {
-    position: fixed;
-    bottom: 32px; right: 32px;
-    z-index: 10;
-    width: 44px; height: 44px;
-    border-radius: 50%;
-    background: var(--card-bg);
-    backdrop-filter: blur(10px);
-    border: 1px solid var(--card-border);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    color: var(--blue-600);
-    transition: all 0.3s;
-    box-shadow: var(--shadow-md);
+    position:fixed;
+    bottom:36px;right:36px;
+    z-index:10;
+    width:46px;height:46px;
+    border-radius:50%;
+    background:var(--glass-bg);
+    backdrop-filter:blur(12px);
+    border:1px solid var(--glass-border);
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:19px;
+    color:var(--blue-600);
+    transition:all 0.35s ease;
+    box-shadow:var(--shadow-md);
   }
   .scroll-top:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
+    transform:translateY(-3px);
+    box-shadow:var(--shadow-lg);
+    border-color:rgba(90,190,255,0.5);
   }
 
-  /* === TAG === */
   .tag-green {
-    display: inline-block;
-    font-size: 11px;
-    padding: 1px 8px;
-    border-radius: 10px;
-    font-weight: 600;
-    background: #e3f5e8;
-    color: #2d7a46;
-    margin-left: 6px;
-    vertical-align: middle;
+    display:inline-block;
+    font-size:11px;
+    padding:1px 8px;
+    border-radius:10px;
+    font-weight:600;
+    background:#e3f5e8;
+    color:#2d7a46;
+    margin-left:6px;
+    vertical-align:middle;
   }
 
-  @media (max-width: 600px) {
-    .main { padding: 16px 12px 40px; }
-    .section-card { padding: 24px 18px; }
-    .info-grid { grid-template-columns: repeat(2, 1fr); }
+  @media (max-width:640px) {
+    .nav-cards { grid-template-columns:repeat(2,1fr); }
+    .hero .name { font-size:34px; }
+    .avatar { width:105px;height:105px; }
+    .main { padding:20px 14px 45px; }
+    .section-card { padding:26px 20px; }
+    .info-grid { grid-template-columns:repeat(2,1fr); }
   }
 </style>
 </head>
@@ -412,14 +432,7 @@
 
 <div class="main">
 
-  <!-- Hero -->
-  <header class="hero" id="top">
-    <h1 class="name">王 丽 新</h1>
-    <p class="subtitle">个 人 简 历</p>
-    <div class="divider"></div>
-  </header>
-
-  <!-- Navigation Cards -->
+  <!-- 导航卡片在最顶部 -->
   <nav class="nav-cards">
     <a class="nav-card" href="#info">
       <span class="nav-icon">📋</span>
@@ -453,6 +466,14 @@
     </a>
   </nav>
 
+  <!-- 照片放在中间 -->
+  <header class="hero" id="top">
+    <h1 class="name">王 丽 新</h1>
+    <p class="subtitle">个 人 简 历</p>
+    <img src="picture.jpg" class="avatar" alt="王丽新证件照">
+    <div class="divider"></div>
+  </header>
+
   <!-- 基本信息 -->
   <section id="info">
     <div class="section-card">
@@ -473,7 +494,6 @@
     <div class="section-card">
       <h2 class="section-title"><span class="title-dot"></span>教育背景</h2>
       <div class="timeline">
-
         <div class="timeline-item">
           <div class="timeline-date">2024-09 ~ 2027-06</div>
           <div class="timeline-title">杭州电子科技大学</div>
@@ -483,7 +503,6 @@
             研究方向：量子光学方向，具备独立搭建光学实验平台、全流程数据处理与科研论文撰写能力
           </div>
         </div>
-
         <div class="timeline-item">
           <div class="timeline-date">2019-09 ~ 2023-06</div>
           <div class="timeline-title">大连民族大学</div>
@@ -492,7 +511,6 @@
             主修课程：光信息处理（90）、光纤通讯技术（93）、光电技术（90）、数字电子技术（97）、模拟电子技术、半导体物理、电路原理、工程光学、激光技术与应用
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -524,14 +542,12 @@
   <section id="skills">
     <div class="section-card">
       <h2 class="section-title"><span class="title-dot"></span>技能特长</h2>
-
       <div class="skill-group">
         <div class="skill-group-title">语言能力</div>
         <div class="skill-tags">
           <span class="skill-tag">大学英语6级（CET-6）</span>
         </div>
       </div>
-
       <div class="skill-group">
         <div class="skill-group-title">光学硬件</div>
         <div class="skill-tags">
@@ -542,7 +558,6 @@
           <span class="skill-tag">示波器</span>
         </div>
       </div>
-
       <div class="skill-group">
         <div class="skill-group-title">设计仿真</div>
         <div class="skill-tags">
@@ -551,7 +566,6 @@
           <span class="skill-tag">CAD / CAXA（工程制图）</span>
         </div>
       </div>
-
       <div class="skill-group">
         <div class="skill-group-title">数据分析与编程</div>
         <div class="skill-tags">
@@ -562,7 +576,6 @@
           <span class="skill-tag">Word / Excel</span>
         </div>
       </div>
-
     </div>
   </section>
 
@@ -570,7 +583,6 @@
   <section id="competition">
     <div class="section-card">
       <h2 class="section-title"><span class="title-dot"></span>竞赛与实践</h2>
-
       <div class="skill-group">
         <div class="skill-group-title">学业荣誉</div>
         <div class="skill-tags">
@@ -579,7 +591,6 @@
           <span class="skill-tag">研究生三等奖学金（硕士）</span>
         </div>
       </div>
-
       <div class="skill-group">
         <div class="skill-group-title">竞赛获奖</div>
         <div class="comp-item">
@@ -595,14 +606,12 @@
           <div class="comp-body"><strong>第七届中国国际"互联网+"大学生创新创业大赛</strong> — 公益组二等奖</div>
         </div>
       </div>
-
       <div class="skill-group">
         <div class="skill-group-title">实践经历</div>
         <div class="skill-tags">
           <span class="skill-tag">金工实习（本科）：钳工、铣削、3D打印、激光加工、焊接、铸造 — 全流程零事故</span>
         </div>
       </div>
-
     </div>
   </section>
 
@@ -619,19 +628,15 @@
   <footer class="footer">
     © 2024 王丽新 · Personal Resume
   </footer>
-
 </div>
 
-<!-- Scroll to top button -->
 <div class="scroll-top" id="scrollTop" title="回到顶部">↑</div>
 
 <script>
-// ===== AURORA BOREALIS EFFECT =====
 (function() {
   const canvas = document.getElementById('aurora-canvas');
   const ctx = canvas.getContext('2d');
   let w, h;
-
   function resize() {
     w = canvas.width = window.innerWidth;
     h = canvas.height = window.innerHeight;
@@ -639,135 +644,100 @@
   resize();
   window.addEventListener('resize', resize);
 
-  // Aurora layers — each is a sine wave with noise-like undulation
   const layers = [
-    { baseY: 0.28, amp: 50, freq: 0.0008, speed: 0.15, hue: 200, sat: 60, light: 78, alpha: 0.28, phase: 0 },
-    { baseY: 0.35, amp: 70, freq: 0.0010, speed: 0.12, hue: 195, sat: 55, light: 75, alpha: 0.24, phase: 1.2 },
-    { baseY: 0.32, amp: 90, freq: 0.0006, speed: 0.18, hue: 205, sat: 65, light: 80, alpha: 0.20, phase: 2.5 },
-    { baseY: 0.40, amp: 55, freq: 0.0012, speed: 0.10, hue: 190, sat: 50, light: 82, alpha: 0.18, phase: 3.8 },
-    { baseY: 0.25, amp: 40, freq: 0.0015, speed: 0.20, hue: 210, sat: 58, light: 76, alpha: 0.22, phase: 5.0 },
+    { baseY:0.26,amp:55,freq:0.0007,speed:0.14,hue:198,sat:68,light:82,alpha:0.22,phase:0},
+    { baseY:0.34,amp:75,freq:0.0009,speed:0.11,hue:192,sat:62,light:79,alpha:0.19,phase:1.3},
+    { baseY:0.31,amp:95,freq:0.0005,speed:0.17,hue:202,sat:70,light:84,alpha:0.16,phase:2.6},
+    { baseY:0.39,amp:60,freq:0.0011,speed:0.09,hue:188,sat:58,light:86,alpha:0.14,phase:3.9},
+    { baseY:0.23,amp:45,freq:0.0014,speed:0.19,hue:208,sat:65,light:80,alpha:0.18,phase:5.2},
   ];
+  let time=0;
+  function draw(){
+    time+=0.005;
+    ctx.clearRect(0,0,w,h);
+    const skyGrad=ctx.createLinearGradient(0,0,0,h);
+    skyGrad.addColorStop(0,"#e1f0ff");
+    skyGrad.addColorStop(0.5,"#ecf6ff");
+    skyGrad.addColorStop(1,"#f4faff");
+    ctx.fillStyle=skyGrad;
+    ctx.fillRect(0,0,w,h);
 
-  let time = 0;
-
-  function draw() {
-    time += 0.005;
-    ctx.clearRect(0, 0, w, h);
-
-    // Soft gradient sky base
-    const skyGrad = ctx.createLinearGradient(0, 0, 0, h);
-    skyGrad.addColorStop(0, '#dce8f5');
-    skyGrad.addColorStop(0.5, '#eaf2fa');
-    skyGrad.addColorStop(1, '#f2f7fc');
-    ctx.fillStyle = skyGrad;
-    ctx.fillRect(0, 0, w, h);
-
-    layers.forEach(layer => {
+    layers.forEach(layer=>{
       ctx.beginPath();
-      const baseY = layer.baseY * h;
-      const segments = Math.floor(w / 3);
-
-      for (let x = 0; x <= w; x += 2) {
-        // Composite wave: primary sine + secondary sine + noise offset
-        let yOff = Math.sin(x * layer.freq + time * layer.speed + layer.phase) * layer.amp;
-        yOff += Math.sin(x * layer.freq * 2.3 + time * layer.speed * 0.7 + layer.phase) * layer.amp * 0.4;
-        yOff += Math.sin(x * layer.freq * 5.1 + time * layer.speed * 1.3) * layer.amp * 0.2;
-        // Low-frequency vertical drift
-        yOff += Math.sin(time * 0.3 + layer.phase) * layer.amp * 0.25;
-
-        const y = baseY + yOff;
-
-        if (x === 0) {
-          ctx.moveTo(x, y);
-        } else {
-          ctx.lineTo(x, y);
-        }
+      const baseY=layer.baseY*h;
+      for(let x=0;x<=w;x+=2){
+        let yOff=Math.sin(x*layer.freq+time*layer.speed+layer.phase)*layer.amp;
+        yOff+=Math.sin(x*layer.freq*2.2+time*layer.speed*0.65+layer.phase)*layer.amp*0.38;
+        yOff+=Math.sin(x*layer.freq*4.9+time*layer.speed*1.25+layer.phase)*layer.amp*0.18;
+        yOff+=Math.sin(time*0.28+layer.phase)*layer.amp*0.22;
+        const y=baseY+yOff;
+        x===0?ctx.moveTo(x,y):ctx.lineTo(x,y);
       }
+      ctx.lineTo(w,h);ctx.lineTo(0,h);ctx.closePath();
+      const grad=ctx.createLinearGradient(0,baseY-layer.amp-25,0,h);
+      const c1=`hsla(${layer.hue},${layer.sat}%,${layer.light}%,${layer.alpha})`;
+      const c2=`hsla(${layer.hue},${layer.sat}%,${layer.light+6}%,${layer.alpha*0.45})`;
+      const c3=`hsla(${layer.hue},${layer.sat}%,94%,0)`;
+      grad.addColorStop(0,c1);grad.addColorStop(0.5,c2);grad.addColorStop(1,c3);
+      ctx.fillStyle=grad;ctx.fill();
 
-      // Complete the shape by drawing bottom and closing
-      ctx.lineTo(w, h);
-      ctx.lineTo(0, h);
-      ctx.closePath();
-
-      // Gradient fill for each aurora layer
-      const grad = ctx.createLinearGradient(0, baseY - layer.amp - 20, 0, h);
-      const c1 = `hsla(${layer.hue}, ${layer.sat}%, ${layer.light}%, ${layer.alpha})`;
-      const c2 = `hsla(${layer.hue}, ${layer.sat}%, ${layer.light + 5}%, ${layer.alpha * 0.5})`;
-      const c3 = `hsla(${layer.hue}, ${layer.sat}%, 92%, 0)`;
-      grad.addColorStop(0, c1);
-      grad.addColorStop(0.5, c2);
-      grad.addColorStop(1, c3);
-      ctx.fillStyle = grad;
-      ctx.fill();
-
-      // Glow line along top edge
       ctx.beginPath();
-      for (let x = 0; x <= w; x += 2) {
-        let yOff = Math.sin(x * layer.freq + time * layer.speed + layer.phase) * layer.amp;
-        yOff += Math.sin(x * layer.freq * 2.3 + time * layer.speed * 0.7 + layer.phase) * layer.amp * 0.4;
-        yOff += Math.sin(x * layer.freq * 5.1 + time * layer.speed * 1.3) * layer.amp * 0.2;
-        yOff += Math.sin(time * 0.3 + layer.phase) * layer.amp * 0.25;
-        const y = baseY + yOff;
-        if (x === 0) ctx.moveTo(x, y);
-        else ctx.lineTo(x, y);
+      for(let x=0;x<=w;x+=2){
+        let yOff=Math.sin(x*layer.freq+time*layer.speed+layer.phase)*layer.amp;
+        yOff+=Math.sin(x*layer.freq*2.2+time*layer.speed*0.65+layer.phase)*layer.amp*0.38;
+        yOff+=Math.sin(x*layer.freq*4.9+time*layer.speed*1.25+layer.phase)*layer.amp*0.18;
+        yOff+=Math.sin(time*0.28+layer.phase)*layer.amp*0.22;
+        const y=baseY+yOff;
+        x===0?ctx.moveTo(x,y):ctx.lineTo(x,y);
       }
-      ctx.strokeStyle = `hsla(${layer.hue}, ${layer.sat}%, ${layer.light + 10}%, ${layer.alpha * 1.2})`;
-      ctx.lineWidth = 2.5;
-      ctx.shadowColor = `hsla(${layer.hue}, ${layer.sat}%, ${layer.light}%, 0.4)`;
-      ctx.shadowBlur = 20;
+      ctx.strokeStyle=`hsla(${layer.hue},${layer.sat}%,${layer.light+12}%,${layer.alpha*1.3})`;
+      ctx.lineWidth=2.8;
+      ctx.shadowColor=`hsla(${layer.hue},${layer.sat}%,${layer.light}%,0.38)`;
+      ctx.shadowBlur=24;
       ctx.stroke();
-      ctx.shadowBlur = 0;
-    });
-
+      ctx.shadowBlur=0;
+    })
     requestAnimationFrame(draw);
   }
-
   draw();
 })();
 
-// ===== FLOATING PARTICLES =====
-(function() {
-  const container = document.getElementById('particles');
-  const count = 25;
-
-  for (let i = 0; i < count; i++) {
-    const p = document.createElement('div');
-    p.className = 'particle';
-    const size = 2 + Math.random() * 4;
-    p.style.width = size + 'px';
-    p.style.height = size + 'px';
-    p.style.left = Math.random() * 100 + '%';
-    p.style.bottom = -(Math.random() * 60) + 'px';
-    p.style.animationDuration = (12 + Math.random() * 20) + 's';
-    p.style.animationDelay = Math.random() * 15 + 's';
+(function(){
+  const container=document.getElementById('particles');
+  const count=32;
+  for(let i=0;i<count;i++){
+    const p=document.createElement('div');
+    p.className='particle';
+    const size=2+Math.random()*5;
+    p.style.width=size+'px';
+    p.style.height=size+'px';
+    p.style.left=Math.random()*100+'%';
+    p.style.bottom=-(Math.random()*70)+'px';
+    p.style.animationDuration=(13+Math.random()*22)+'s';
+    p.style.animationDelay=Math.random()*16+'s';
     container.appendChild(p);
   }
 })();
 
-// ===== SMOOTH SCROLL for nav cards =====
-document.querySelectorAll('.nav-card').forEach(card => {
-  card.addEventListener('click', function(e) {
+document.querySelectorAll('.nav-card').forEach(card=>{
+  card.addEventListener('click',function(e){
     e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  });
-});
+    const target=document.querySelector(this.getAttribute('href'));
+    if(target) target.scrollIntoView({behavior:'smooth',block:'start'});
+  })
+})
 
-// ===== SCROLL TO TOP =====
-const scrollTopBtn = document.getElementById('scrollTop');
-scrollTopBtn.addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-window.addEventListener('scroll', () => {
-  scrollTopBtn.style.opacity = window.scrollY > 400 ? '1' : '0';
-  scrollTopBtn.style.pointerEvents = window.scrollY > 400 ? 'auto' : 'none';
-});
-// init
-scrollTopBtn.style.opacity = '0';
-scrollTopBtn.style.pointerEvents = 'none';
-scrollTopBtn.style.transition = 'opacity 0.3s';
+const scrollTopBtn=document.getElementById('scrollTop');
+scrollTopBtn.addEventListener('click',()=>{
+  window.scrollTo({top:0,behavior:'smooth'});
+})
+window.addEventListener('scroll',()=>{
+  scrollTopBtn.style.opacity=window.scrollY>400?'1':'0';
+  scrollTopBtn.style.pointerEvents=window.scrollY>400?'auto':'none';
+})
+scrollTopBtn.style.opacity='0';
+scrollTopBtn.style.pointerEvents='none';
+scrollTopBtn.style.transition='opacity 0.35s ease';
 </script>
 
 </body>
